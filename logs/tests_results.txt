@@ -1,0 +1,63 @@
+test_get_number_of_char (__main__.TestExercice) ... FAIL
+test_get_number_of_words (__main__.TestExercice) ... FAIL
+test_pair (__main__.TestExercice) ... ok
+test_remove_third_char (__main__.TestExercice) ... ok
+test_replace_char (__main__.TestExercice) ... FAIL
+
+======================================================================
+FAIL: test_get_number_of_char (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 62, in test_get_number_of_char
+    self.assertListEqual(
+AssertionError: Lists differ: [3, 0, -1] != [4, 1, 0]
+
+First differing element 0:
+3
+4
+
+- [3, 0, -1]
++ [4, 1, 0] : Mauvais calcul du nombre d'occurence du caractère
+
+======================================================================
+FAIL: test_get_number_of_words (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 78, in test_get_number_of_words
+    self.assertListEqual(
+AssertionError: Lists differ: [2, 1, 1] != [2, 0, 1]
+
+First differing element 1:
+1
+0
+
+- [2, 1, 1]
+?     ^
+
++ [2, 0, 1]
+?     ^
+ : Mauvais calcul du nombre d'occurence du mot
+
+======================================================================
+FAIL: test_replace_char (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 46, in test_replace_char
+    self.assertListEqual(
+AssertionError: Lists differ: ['hey yad!', 'aaaabb', 'a1234'] != ['hey yad!', 'bbbbbb', 'a1234']
+
+First differing element 1:
+'aaaabb'
+'bbbbbb'
+
+- ['hey yad!', 'aaaabb', 'a1234']
+?               ^^^^
+
++ ['hey yad!', 'bbbbbb', 'a1234']
+?               ^^^^
+ : Erreur dans le remplacement de caractère
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=3)
