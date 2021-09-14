@@ -3,23 +3,84 @@
 
 
 def is_even_len(string: str) -> bool:
-    pass
+    if len(string)%2==0:
+        return True
+    else:
+        return False
+
+
 
 
 def remove_third_char(string: str) -> str:
-    pass
+    longueur=len(string)
+    chaine=""
+    i=0
+    while i<2:
+        chaine+=string[i]
+        i+=1
+    i=3
+    while i<longueur:
+        chaine+=string[i]
+        i+=1
+    return chaine
+
+
+
 
 
 def replace_char(string: str, old_char: str, new_char: str) -> str:
-    pass
+    longueur=len(string)
+    chaine=""
+    i=-1
+    for lettre in string:
+        i+=1
+        if lettre==old_char:
+            ordre_lettre=i
+    i=0
+    while i<ordre_lettre:
+        chaine+=string[i]
+        i+=1
+    if i==ordre_lettre:
+        chaine+=new_char
+        i+=1
+
+    while i<longueur:
+        chaine+=string[i]
+        i+=1
+    return chaine
 
 
 def get_number_of_char(string: str, char: str) -> int:
-    pass
+    number=-1
+    for letter in string:
+        if letter==char:
+            number+=1
+    return number
+
 
 
 def get_number_of_words(sentence: str, word: str) -> int:
-    pass
+    i=0
+    j=0
+    compteur=0
+    longueur_phrase=len(sentence)
+    longueur_mot=len(word)
+
+    while i<longueur_phrase:
+        if sentence[i]==word[j] and j<longueur_mot:
+            i, j = i + 1, 1 + j
+            if j==longueur_mot-1:
+                compteur+=1
+                j=0
+
+        else:
+            i+=1
+            j=0
+    return compteur
+
+
+
+
 
 
 def main() -> None:
